@@ -1,0 +1,23 @@
+{
+  "name": "swagger-generator",
+  "version": "0.0.1",
+  "description": "Generates swagger from annotations",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/imi187/swagger-generator.git"
+  },
+  "author": "Imre Németh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imi187/swagger-generator/issues"
+  },
+  "dependencies": {
+    "annotation": "^0.1.0",
+    "glob": "^5.0.14"
+  },
+  "homepage": "https://github.com/imi187/swagger-generator"
+}
