@@ -16,8 +16,8 @@
     "url": "https://github.com/imi187/swagger-generator/issues"
   },
   "dependencies": {
-    "annotation": "^0.1.0",
-    "glob": "^5.0.14"
+    "glob": "^5.0.14",
+    "async": "^1.4.0"
   },
   "homepage": "https://github.com/imi187/swagger-generator"
 }

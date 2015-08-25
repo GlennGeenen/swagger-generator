@@ -2,93 +2,74 @@
 
 **WORK IN PROGRESS!**
 
-
-Dependencies
-
-* [node-annotation - 0.1](https://github.com/gquental/node-annotation)
-
-
 Package to generate swagger json from annotations in node
-
-	npm install swagger-generator
-	
 
 ## Installation
 
-Adds this lines to app.js
+    npm install swagger-generator
 
-	var swaggerJson = require('swagger-generator');
-	// set Swagger configuration
-	swaggerJson.swagger = "2.0";
-	swaggerJson.basePath = "/api/v1";
-	swaggerJson.info = {
-	  title: "Title-of-swagger",
-	  version: "0.0.1"
-	};
-	
-	// Scan given directory
-	swaggerJson.render('./app/**/*.js');
-	
-	
-Adds this lines to a controller method
+## Usage
 
-	var swagger = require('swagger-generator');
-	
-	module.exports = {
-    	 json: function (req, res) {
-      	   res.ok(swagger);
-    	 }
+    var swaggerGenerator = require('swagger-generator');
+
+    var object = {
+      swagger: '2.0',
+      basePath: '/api/v1',
+      info: {
+        title: 'Title-of-swagger',
+        version: '0.0.1'
+      }
     };
-    
-    
+
+    // Fill object with annotations in given directory
+    swaggerGenerator.parseSwagger(object, './app/**/*.js', function(err) {
+      console.log(err);
+    });
+
 ## Swagger annotations
 
-	• @SwaggerTag
-	• @SwaggerPath
-    • @SwaggerDefinition
-    • @SwaggerProperty
-    
-    
+  • @SwaggerTag
+  • @SwaggerPath
+  • @SwaggerDefinition
+  • @SwaggerProperty
+
 ## Examples
 
 Swagger definition
 
-	/**
-     * @Class();
+    /**
      * @SwaggerDefinition({
      *   "User": {
      *     "type": "object",
      *     "required": ["name"]
      *   }
      * })
-	 */
-	var schema = {
-	  /**
-       * @Property("firstName");
+     */
+    var schema = {
+
+      /**
        * @SwaggerProperty({
        *   "firstName": {
        *     "type": "string"
        *   }
        * })
        */
-	  firstName: {type: String},
+      firstName: {type: String},
 
-	  /**
-       * @Property("name");
+      /**
        * @SwaggerProperty({
        *   "name": {
        *     "type": "string"
        *   }
        * })
        */
-	  name: {type: String},
-	  
-	}
-	
+      name: {type: String},
+
+    }
+
 Swagger paths
-	
-	/**
-     * @Class();
+
+    /**
      * @SwaggerTag([
      *   {
      *     "name": "user-resource",
@@ -100,10 +81,9 @@ Swagger paths
      *   }
      * ])
      */
-   	var controller = {
-   	  
-   	  /**
-       * @Method("list");
+     var controller = {
+
+       /**
        * @SwaggerPath({
        *   "/user/": {
        *     "get": {
@@ -120,7 +100,7 @@ Swagger paths
        *   }
        * })
        */
-   	  list: function(){
-   	    //code
-   	  }
-   	} 
+       list: function(){
+         //code
+       }
+     }
