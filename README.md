@@ -2,6 +2,12 @@
 
 **WORK IN PROGRESS!**
 
+
+Dependencies
+
+* [node-annotation - 0.1](https://github.com/gquental/node-annotation)
+
+
 Package to generate swagger json from annotations in node
 
 	npm install swagger-generator
