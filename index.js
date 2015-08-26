@@ -39,13 +39,13 @@ function parseSwagger(object, directory, callback) {
 
 function writeSwagger(object, directory, path, callback) {
 
-  parseSwagger(object, directory, function parsed(err, result) {
+  parseSwagger(object, directory, function parsed(err) {
 
     if (err) {
       return callback(err);
     }
 
-    fs.writeFile(path, JSON.stringify(result), callback);
+    fs.writeFile(path, JSON.stringify(object), callback);
 
   });
 
