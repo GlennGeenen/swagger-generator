@@ -74,7 +74,7 @@ Swagger paths
      *   {
      *     "name": "user-resource",
      *     "description": "User-reource\\Endpoints",
-     *     "external url" : {
+     *     "externalDocs" : {
      *       "description": "Swagger documenation",
      *       "url" : "https://github.com/imi187/swagger-generator"
      *     }
