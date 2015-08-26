@@ -1,6 +1,6 @@
 {
   "name": "swagger-generator",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Generates swagger from annotations",
   "main": "index.js",
   "scripts": {
