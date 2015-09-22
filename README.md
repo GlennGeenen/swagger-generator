@@ -24,6 +24,12 @@ Package to generate swagger json from annotations in node
     // Fill object with annotations in given directory
     swaggerGenerator.parseSwagger(object, './app/**/*.js', function(err) {
       console.log(err);
+      // object is now filled
+    });
+
+    // Fill object and write json with annotations in given directory
+    swaggerGenerator.writeSwagger(object, './app/**/*.js', './swagger.json', function(err) {
+      console.log(err);
     });
 
 ## Swagger annotations
